@@ -2,7 +2,7 @@ function Home() {
 
     return(
         <>
-        <div id="container" className="bg-indigo-900 flex justify-center">
+        <div id="container" className="bg-rose-300 flex justify-center">
        
             <div id="subcontainer" className="container grid grid-cols-2 text-white">
                 
@@ -18,7 +18,7 @@ function Home() {
                         <div className="rounded text-white border-white border-solid border-2 px-4 py-2">
                             Nova Postagem</div>
 
-                        <div className="rounded text-indigo-900 border-white bg-white border-solid border-2 px-4 py-2">
+                        <div className="rounded text-rose-500 border-white bg-white border-solid border-2 px-4 py-2">
                             Ver Postagem</div>
                     </div>
                 </div>
@@ -26,7 +26,7 @@ function Home() {
                 <div>
     
                 <div id="imagem" className="flex justify-center">
-                    <img src = "https://i.imgur.com/VpwApCU.png" alt = "pagina home" className="w-2/3"/>
+                    <img src = "https://ik.imagekit.io/r79tg58za/programmer.png?updatedAt=1705525390544" alt = "pagina home" className="w-2/3"/>
                 </div>
 
                 </div>
