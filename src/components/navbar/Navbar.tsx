@@ -23,23 +23,23 @@ function Navbar() {
         </div>
 
         <div className="col-span-2  text-white flex justify-around hover:bg-rose-200">
-            Postagens
-            </div>
-
-        <div className="col-span-1.5  text-white flex justify-around hover:bg-rose-200">
-            <p>Tema</p>
+        <Link to='/temas' className='hover:text-rose-300'> 
+            Temas</Link>
+            
             </div>
 
         <div className="col-span-2  text-white flex justify-around hover:bg-rose-200">
-            <p>Cadastrar Tema</p>
+        <Link to='/cadastrarTema' className='hover:text-rose-300'> 
+            Cadastrar Tema</Link>
             </div>
 
-        <div className="col-span-1.5  text-white flex justify-around hover:bg-rose-200">
-            <p>Login</p>
+         <div className="col-span-2  text-white flex justify-around hover:bg-rose-200 hover:text-rose-300">
+            Postagens
             </div>
+
        
          <div className="col-span-1.5  text-white flex justify-around hover:bg-rose-200">
-            <Link to ='' onClick = {logout} className="hover: underline"> 
+            <Link to ='' onClick = {logout} className="hover: underline hover:text-rose-300"> 
             Sair </Link>
         </div>
       
