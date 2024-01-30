@@ -4,6 +4,7 @@ import Tema from "../../../models/Tema";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { atualizar, buscar, cadastrar } from "../../../services/Service";
 import { RotatingLines } from "react-loader-spinner";
+import { toastAlerta } from "../../../utils/ToastAlerta";
 
 function FormTema() {
 
@@ -30,7 +31,7 @@ function FormTema() {
 
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                alert('O token expirou. Faça login novamente.')
+                toastAlerta('O token expirou. Faça login novamente.', 'info')
                 handleLogout()
             }
         }
@@ -39,7 +40,7 @@ function FormTema() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa fazer o login.')
+            toastAlerta('Você precisa fazer o login.', 'info')
             navigate('/login')
         }
     }, [token])
@@ -74,15 +75,15 @@ function FormTema() {
               }
             })
     
-            alert('Tema atualizado com sucesso')
+            toastAlerta('Tema atualizado com sucesso', 'sucesso')
             retornar()
     
           } catch (error: any) {
             if (error.toString().includes('403')) {
-              alert('O token expirou, favor logar novamente')
+              toastAlerta('O token expirou, favor logar novamente', 'info')
               handleLogout()
             } else {
-              alert('Erro ao atualizar o Tema')
+              toastAlerta('Erro ao atualizar o Tema', 'erro')
             }
     
           }
@@ -95,14 +96,14 @@ function FormTema() {
               }
             })
     
-            alert('Tema cadastrado com sucesso')
+            toastAlerta('Tema cadastrado com sucesso', 'sucesso')
     
           } catch (error: any) {
             if (error.toString().includes('403')) {
-              alert('O token expirou, favor logar novamente')
+              toastAlerta('O token expirou, favor logar novamente', 'info')
               handleLogout()
             } else {
-              alert('Erro ao cadastrado o Tema')
+              toastAlerta('Erro ao cadastrado o Tema', 'erro')
             }
           }
         }
@@ -112,7 +113,7 @@ function FormTema() {
             //CADASTRAR TEMA!// 
 
             return (
-                <div className="container flex flex-col items-center justify-center mx-auto">
+                <div className="container flex flex-col items-center justify-center mx-auto mt-20">
                     <h1 className="text-4xl text-center my-8">
                         {id === undefined ? 'Cadastrar Tema' : 'Editar Tema'}
                     </h1>
@@ -131,7 +132,7 @@ function FormTema() {
                             />
                         </div>
                         <button
-                            className="rounded text-slate-100 bg-indigo-400 hover:bg-indigo-800 w-1/2 py-2 mx-auto flex justify-center"
+                            className="rounded-full text-slate-100 bg-indigo-400 hover:bg-indigo-800 w-1/2 py-2 mx-auto flex justify-center"
                             type="submit"
                         > {isLoading ?
                             <RotatingLines

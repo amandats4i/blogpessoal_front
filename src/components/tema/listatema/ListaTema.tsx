@@ -6,6 +6,7 @@ import Tema from '../../../models/Tema';
 import { AuthContext } from '../../../contexts/AuthContext';
 import { buscar } from '../../../services/Service';
 import { DNA } from 'react-loader-spinner';
+import { toastAlerta } from '../../../utils/ToastAlerta';
 
 
 function ListaTemas() {
@@ -29,7 +30,7 @@ function ListaTemas() {
 
     } catch (error: any) {
       if (error.toString().includes('403')) {
-        alert('O token expirou. Faça login novamente.')
+        toastAlerta('O token expirou. Faça login novamente.', 'info')
         handleLogout()
       }
     }
@@ -39,7 +40,7 @@ function ListaTemas() {
   //que nao esteja logado, faça envio de informações. 
   useEffect(() => {
     if (token === '') {
-      alert('Você precisa fazer o login.')
+      toastAlerta('Você precisa fazer o login.', 'info')
       navigate('/login')
     }
   }, [token])
@@ -60,7 +61,7 @@ function ListaTemas() {
       wrapperClass="dna-wrapper mx-auto"
   />
     )}
-      <div className="flex justify-center w-full my-4">
+      <div className="flex justify-center w-full mt-20">
         <div className="container flex flex-col">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <>

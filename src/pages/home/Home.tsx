@@ -15,7 +15,7 @@ function Home() {
                             Seja bem-vinde!</h2>
 
                         <p className="text-xl">
-                            Expresse aqui os seus pensamentos e opiniões.</p>
+                            Adicione uma nova receita:</p>
 
                         <div className="flex justify-around gap-4">
                             
